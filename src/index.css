@@ -1,0 +1,351 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #333333;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-shell {
+  width: min(100% - 24px, 1720px);
+  margin-inline: auto;
+}
+
+.content-shell {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .site-shell,
+  .content-shell {
+    width: min(100% - 32px, 1580px);
+  }
+}
+
+.nav-link {
+  position: relative;
+  padding: 1.75rem 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(255 255 255 / 72%);
+  transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: #4ab8d8;
+}
+
+.nav-link-active::after {
+  position: absolute;
+  right: 0;
+  bottom: 1.05rem;
+  left: 0;
+  height: 1.5px;
+  content: "";
+  background: #4ab8d8;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  content: "";
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #0d2240;
+  font-size: clamp(1.75rem, 2vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.section-copy {
+  color: #5b6472;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline-light {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.btn-primary {
+  background: #45aecf;
+  color: #0d2240;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border: 1px solid rgb(255 255 255 / 40%);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  border-color: #4ab8d8;
+  color: #8fdef0;
+}
+
+.btn-outline-light {
+  border: 1px solid #cbd5e1;
+  color: #0d2240;
+}
+
+.btn-outline-light:hover {
+  border-color: #4ab8d8;
+  color: #185fa5;
+}
+
+.tag-blue,
+.tag-light {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tag-blue {
+  background: #eaf8fc;
+  color: #185fa5;
+}
+
+.tag-light {
+  border: 1px solid rgb(255 255 255 / 22%);
+  background: rgb(255 255 255 / 10%);
+  color: #d7f6fb;
+}
+
+.icon-square {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tone-1 {
+  background: #185fa5;
+}
+
+.tone-2 {
+  background: #4ab8d8;
+  color: #0d2240;
+}
+
+.tone-3 {
+  background: #6355a3;
+}
+
+.tone-4 {
+  background: #d69d28;
+}
+
+.team-band {
+  display: flex;
+  min-height: 132px;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #0d2240, #164b80 62%, #2e8dad);
+  padding: 1.5rem;
+}
+
+.avatar {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 12%);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.molecule-field {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 74% 26%, rgb(74 184 216 / 28%) 0 3px, transparent 4px),
+    radial-gradient(circle at 84% 40%, rgb(74 184 216 / 18%) 0 4px, transparent 5px),
+    radial-gradient(circle at 68% 54%, rgb(74 184 216 / 18%) 0 5px, transparent 6px),
+    radial-gradient(circle at 92% 65%, rgb(74 184 216 / 14%) 0 3px, transparent 4px);
+  pointer-events: none;
+}
+
+.scientific-visual {
+  position: relative;
+  width: min(430px, 100%);
+  aspect-ratio: 1;
+  border: 1px solid rgb(74 184 216 / 22%);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 52%, rgb(74 184 216 / 22%), transparent 43%),
+    linear-gradient(135deg, rgb(255 255 255 / 11%), rgb(255 255 255 / 3%));
+  box-shadow:
+    0 28px 80px rgb(0 0 0 / 20%),
+    inset 0 1px 0 rgb(255 255 255 / 8%);
+  overflow: hidden;
+}
+
+.visual-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(rgb(143 222 240 / 20%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(143 222 240 / 20%) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 72%);
+}
+
+.document-panel {
+  position: absolute;
+  right: 9%;
+  bottom: 10%;
+  display: grid;
+  width: 34%;
+  gap: 9px;
+  border: 1px solid rgb(143 222 240 / 22%);
+  border-radius: 12px;
+  background: rgb(8 22 40 / 42%);
+  padding: 16px;
+}
+
+.document-panel span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: rgb(143 222 240 / 45%);
+}
+
+.document-panel span:nth-child(2) {
+  width: 74%;
+}
+
+.document-panel span:nth-child(3) {
+  width: 48%;
+  background: rgb(93 202 165 / 58%);
+}
+
+.orbital {
+  position: absolute;
+  border: 1px solid rgb(143 222 240 / 38%);
+  border-radius: 999px;
+}
+
+.orbital-one {
+  inset: 18%;
+  transform: rotate(24deg);
+}
+
+.orbital-two {
+  inset: 28% 12%;
+  transform: rotate(-32deg);
+}
+
+.orbital-three {
+  inset: 12% 28%;
+  transform: rotate(74deg);
+}
+
+.protein-chain {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 32% 34%, #8fdef0 0 6px, transparent 7px),
+    radial-gradient(circle at 48% 48%, #4ab8d8 0 8px, transparent 9px),
+    radial-gradient(circle at 63% 38%, #8fdef0 0 5px, transparent 6px),
+    radial-gradient(circle at 58% 66%, #5dcaa5 0 7px, transparent 8px),
+    radial-gradient(circle at 72% 58%, #4ab8d8 0 5px, transparent 6px);
+}
+
+
+@media (max-width: 640px) {
+  .team-band {
+    min-height: auto;
+    align-items: flex-start;
+  }
+}
