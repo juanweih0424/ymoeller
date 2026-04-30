@@ -3,15 +3,9 @@ import Section from '../component/Section.jsx'
 
 const services = [
   ['GMP audits worldwide', 'EU GMP, ICH Q7, FDA 21 CFR, GDP and GLP audits for pharmaceutical manufacturers.'],
-  ['CAPA & follow-up', 'Evaluation of corrective actions, implementation follow-up, spot checks and for-cause audits.'],
+  ['CAPA & follow-up', 'Evaluation of corrective actions, implementation follow-up, spot checks, and for-cause audits.'],
   ['Authority inspection support', 'Preparation and on-site communication support for EDQM and EU authority inspections.'],
-  ['Training & consulting', 'In-house GMP training, risk assessments, method transfer and supplier qualification support.'],
-]
-
-const specialties = [
-  ['Biologics & Oncology', 'Audit support for antibodies, ADCs, mAbs and high-complexity oncology supply chains.', 'Antibodies - ADCs - mAbs'],
-  ['Peptides & Weight Management', 'Supplier qualification and scale-up support for peptide APIs and GLP-1 programs.', 'GLP-1 - Peptide APIs'],
-  ['US FDA Compliance in China', '21 CFR gap analysis and PAI readiness for China-based CMOs and CDMOs.', '21 CFR - IND - NDA'],
+  ['Gap analysis & follow-up', 'FDA 21 CFR, EU GMP, ICH Q7/Q10/Q11 gap analysis, CAPA review, and remediation support.'],
 ]
 
 const metrics = [
@@ -31,23 +25,25 @@ function Home() {
             <span className="rounded-full border border-[#4AB8D8]/30 bg-[#4AB8D8]/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#8FDEF0]">
               Independent GMP Auditing & Consulting
             </span>
-            <h1 className="mt-7 max-w-4xl text-4xl font-medium leading-tight sm:text-5xl lg:text-[56px]">
-              GMP compliance expertise
-              <br />
-              for <span className="text-[#4AB8D8]">China & India</span> under
-              <br />
-              EU and FDA standards
+            <h1 className="mt-7 max-w-5xl text-4xl font-medium leading-tight sm:text-5xl lg:text-[56px]">
+              Your independent partner for{' '}
+              <span className="text-[#4AB8D8]">global GMP/FDA</span> consulting and auditing
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/74">
-              Y. Moeller Consulting supports pharmaceutical and biotech companies with GMP
-              audits, supplier qualification, inspection preparation and regulatory quality
-              consulting. The team combines long-standing Asia experience with practical EU GMP,
-              ICH Q7 and 21 CFR knowledge.
-            </p>
+            <div className="mt-6 max-w-4xl space-y-4 text-base leading-8 text-white/74">
+              <p>
+                Y. Moeller Consulting is supporting you to prepare companies to fulfill GMP
+                requirements according to EU GMP and US FDA standards. The spectrum of work covered
+                starting materials to finished dosage forms, from Drug Substance to Drug Product,
+                including Investigational Drugs.
+              </p>
+              <p>
+                The support is from Quality Audits to enable Qualified Persons to release a batch
+                for a clinical trial, routine GMP audits to supporting plants to prepare and pass EU
+                GMP and US FDA inspections. During the past 15 years we had more than 30 successful
+                regulatory inspections, and all passed.
+              </p>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/contact" className="btn-primary">
-                Request an audit
-              </a>
               <a href="/services" className="btn-secondary">
                 Our services
               </a>
@@ -75,8 +71,8 @@ function Home() {
           {[
             ['50+', 'Sites audited in China & India'],
             ['40-50', 'Audits per year, worldwide'],
-            ['35+', 'Years in Asia & pharma'],
-            ['EU/FDA', 'Regulatory audit expertise'],
+            ['30+', 'Successful inspections'],
+            ['EU/FDA', 'GMP readiness support'],
           ].map(([value, label]) => (
             <div key={label} className="px-4 py-3 text-center">
               <p className="text-2xl font-semibold text-[#4AB8D8]">{value}</p>
@@ -93,8 +89,8 @@ function Home() {
         <div className="mt-3 grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <h2 className="section-title">Focused GMP audit support for regulated supply chains.</h2>
           <p className="section-copy">
-            Services are structured around practical audit execution: scope definition, document
-            review, on-site or remote audit work, reporting, CAPA evaluation and follow-up.
+            Services support quality audits, qualified person release decisions, routine GMP
+            programs, regulatory inspection readiness, and CAPA follow-up.
           </p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -104,24 +100,6 @@ function Home() {
               <h3 className="mt-5 text-base font-semibold text-[#0D2240]">{title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
             </Card>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="bg-[#0D2240] py-8 text-white">
-        <p className="eyebrow text-[#4AB8D8]">Advanced therapeutics</p>
-        <h2 className="mt-2 max-w-5xl text-3xl font-medium leading-tight text-white sm:text-4xl">
-          Specialized support for biologics, peptides and China-based CDMOs.
-        </h2>
-        <div className="mt-4 grid gap-4 lg:grid-cols-3">
-          {specialties.map(([title, text, tag]) => (
-            <div key={title} className="rounded-xl border border-[#4AB8D8]/30 bg-white/5 p-6">
-              <h3 className="text-lg font-semibold text-[#8FDEF0]">{title}</h3>
-              <p className="mt-4 text-sm leading-7 text-white/70">{text}</p>
-              <p className="mt-6 rounded-full bg-[#4AB8D8]/12 px-3 py-2 text-xs font-semibold text-[#8FDEF0]">
-                {tag}
-              </p>
-            </div>
           ))}
         </div>
       </Section>

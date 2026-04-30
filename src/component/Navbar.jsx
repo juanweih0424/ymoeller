@@ -31,20 +31,19 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
               <a
                 key={item.key}
                 href={item.href}
-                className={`nav-link ${activeRoute === item.key ? 'nav-link-active' : ''}`}
+                className={
+                  item.key === '/contact'
+                    ? `nav-contact-link ${
+                        activeRoute === item.key ? 'nav-contact-link-active' : ''
+                      }`
+                    : `nav-link ${activeRoute === item.key ? 'nav-link-active' : ''}`
+                }
                 onClick={(event) => handleClick(event, item.href)}
               >
                 {item.label}
               </a>
             ))}
           </div>
-          <a
-            href="/contact"
-            className="rounded-md bg-[#4AB8D8] px-3 py-2 text-xs font-semibold text-[#0D2240] transition hover:bg-white"
-            onClick={(event) => handleClick(event, '/contact')}
-          >
-            Request an audit
-          </a>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
@@ -64,9 +63,13 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
               <a
                 key={item.key}
                 href={item.href}
-                className={`rounded-md px-3 py-3 text-sm text-white/80 ${
-                  activeRoute === item.key ? 'bg-white/8 text-[#4AB8D8]' : ''
-                }`}
+                className={
+                  item.key === '/contact'
+                    ? 'mt-2 rounded-md bg-[#4AB8D8] px-3 py-3 text-sm font-semibold text-[#0D2240]'
+                    : `rounded-md px-3 py-3 text-sm text-white/80 ${
+                        activeRoute === item.key ? 'bg-white/8 text-[#4AB8D8]' : ''
+                      }`
+                }
                 onClick={(event) => handleClick(event, item.href)}
               >
                 {item.label}

@@ -1,15 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import Footer from './component/Footer.jsx'
 import Navbar from './component/Navbar.jsx'
-import AdvancedTherapeutics from './page/AdvancedTherapeutics.jsx'
-import ChinaIndia from './page/ChinaIndia.jsx'
 import Contact from './page/Contact.jsx'
 import Home from './page/Home.jsx'
-import News from './page/News.jsx'
 import Privacy from './page/Privacy.jsx'
 import Qualifications from './page/Qualifications.jsx'
 import Services from './page/Services.jsx'
-import Team from './page/Team.jsx'
 
 const routes = {
   '/': {
@@ -26,40 +22,12 @@ const routes = {
       'Worldwide GMP audits, CAPA follow-up, authority inspection support, training, and pharmaceutical quality consulting.',
     component: Services,
   },
-  '/advanced-therapeutics': {
-    label: 'Advanced Therapeutics',
-    title: 'Advanced Therapeutics | Biologics, Peptides & FDA Readiness',
-    description:
-      'GMP audit support for biologics, oncology products, peptide APIs, and China-based CDMOs preparing for EU or FDA expectations.',
-    component: AdvancedTherapeutics,
-  },
-  '/china-india': {
-    label: 'China & India',
-    title: 'China & India GMP Audit Focus | Y. Moeller Consulting',
-    description:
-      'Deep Asia experience, Chinese-language audit capability, and EU/FDA regulatory support for manufacturing sites in China and India.',
-    component: ChinaIndia,
-  },
-  '/team': {
-    label: 'Team',
-    title: 'Team | Y. Moeller Consulting',
-    description:
-      'Meet York Moeller and Amy Liu, the independent audit team behind Y. Moeller Consulting.',
-    component: Team,
-  },
   '/qualifications': {
     label: 'Qualifications',
     title: 'Qualifications | Y. Moeller Consulting',
     description:
       'Certifications, regulatory experience, conference activity, and authority inspection support credentials.',
     component: Qualifications,
-  },
-  '/news': {
-    label: 'News',
-    title: 'News & Insights | Y. Moeller Consulting',
-    description:
-      'Conference notes and regulatory topics for GMP auditing, China-based manufacturing, biologics, and peptide APIs.',
-    component: News,
   },
   '/contact': {
     label: 'Contact & Imprint',
@@ -77,13 +45,29 @@ const routes = {
   },
 }
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+const stripBasePath = (pathname) => {
+  if (basePath && pathname === basePath) {
+    return '/'
+  }
+
+  if (basePath && pathname.startsWith(`${basePath}/`)) {
+    return pathname.slice(basePath.length) || '/'
+  }
+
+  return pathname
+}
+
 const normalizeRoute = () => {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+  const path = stripBasePath(window.location.pathname).replace(/\/+$/, '') || '/'
   return routes[path] ? path : '/'
 }
 
 const navigateTo = (href) => {
-  window.history.pushState({}, '', href)
+  const path = href.replace(/\/+$/, '') || '/'
+  const browserPath = `${basePath}${path === '/' ? '/' : path}`
+  window.history.pushState({}, '', browserPath)
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
@@ -108,11 +92,12 @@ function App() {
 
       const url = new URL(link.href)
       const sameOrigin = url.origin === window.location.origin
-      const knownRoute = routes[url.pathname.replace(/\/+$/, '') || '/']
+      const routePath = stripBasePath(url.pathname).replace(/\/+$/, '') || '/'
+      const knownRoute = routes[routePath]
 
       if (sameOrigin && knownRoute) {
         event.preventDefault()
-        navigateTo(url.pathname)
+        navigateTo(routePath)
       }
     }
 
@@ -133,11 +118,7 @@ function App() {
       [
         '/',
         '/services',
-        '/advanced-therapeutics',
-        '/china-india',
-        '/team',
         '/qualifications',
-        '/news',
         '/contact',
       ].map((key) => ({ key, label: routes[key].label, href: key })),
     [],

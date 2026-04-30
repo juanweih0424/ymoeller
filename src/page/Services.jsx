@@ -2,13 +2,14 @@ import Card from '../component/Card.jsx'
 import PageHero from '../component/PageHero.jsx'
 import Section from '../component/Section.jsx'
 
-const steps = ['Consultation & scope', 'Document review & preparation', 'On-site audit', 'Report, CAPA & follow-up']
-const facilities = ['API', 'Finished dosage forms', 'Biologics', 'Sterile manufacturing', 'Peptide APIs', 'CMO/CDMO sites', 'Quality control labs', 'Warehousing & GDP']
+const steps = ['Consultation & scope', 'Document review & preparation', 'On-site audit or assessment', 'Report, CAPA & follow-up']
+const facilities = ['API', 'Finished dosage forms', 'Biologics', 'Sterile manufacturing', 'Peptide APIs', 'Excipients', 'Packaging sites', 'CMO/CDMO sites', 'Quality control labs', 'Warehousing & GDP']
 const additional = [
-  ['CAPA & follow-up', 'Review of corrective actions, effectiveness checks and implementation follow-up.'],
-  ['Authority inspection support', 'Preparation and accompaniment for EDQM and EU authority audit situations.'],
-  ['In-house GMP training', 'Focused training for quality teams, production teams and audit readiness.'],
-  ['Consulting & documentation', 'Risk assessments, analytical method transfer, supplier qualification and DMF support.'],
+  ['GMP audits & supplier qualification', 'Routine, for-cause, remote, follow-up, and mock authority audits across API, FDF, biologics, peptide API, sterile, excipient, and packaging operations.'],
+  ['Inspection preparation & authority support', 'Site preparation, EDQM and EU authority inspection accompaniment, CAPA evaluation, follow-up audits, and response strategy support.'],
+  ['Regulatory gap analysis', 'Chapter-by-chapter gap analysis against FDA 21 CFR 210/211, EU GMP, ICH Q7, Q10, and Q11 with severity, corrective action, and remediation effort.'],
+  ['Advanced therapeutics', 'Specialized auditing and consulting for monoclonal antibodies, ADCs, bispecific antibodies, GLP-1 peptide APIs, and other innovative modalities.'],
+  ['Training, consulting & translation', 'In-house GMP training in German, English, or Chinese, plus regulatory document, audit report, SOP, batch record, and dossier translation support.'],
 ]
 
 function Services() {
@@ -17,7 +18,7 @@ function Services() {
       <PageHero eyebrow="Home / Services" title="GMP audit services for pharmaceutical manufacturers and suppliers.">
         <p>
           Worldwide audit and consulting support across EU GMP, ICH Q7, 21 CFR 210/211, GDP and
-          GLP expectations, with particular strength in China and India.
+          GLP expectations, from starting materials to finished dosage forms and investigational drugs.
         </p>
       </PageHero>
 
@@ -54,7 +55,7 @@ function Services() {
           <Card>
             <h3 className="text-lg font-semibold text-[#0D2240]">Regulatory frameworks</h3>
             <div className="mt-5 flex flex-wrap gap-2">
-              {['EU GMP', 'FDA 21 CFR 210/211', 'ICH Q7', 'GDP', 'GLP'].map((item) => (
+              {['EU GMP', 'FDA 21 CFR 210/211', 'ICH Q7', 'ICH Q10', 'ICH Q11', 'GDP', 'GLP'].map((item) => (
                 <span key={item} className="tag-blue">{item}</span>
               ))}
             </div>

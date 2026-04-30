@@ -14,13 +14,12 @@ const legalDetails = [
   ['Commercial register', 'HRA 121460'],
   ['VAT ID', 'Ust.-ID.Nr. DE 311766278'],
   ['Managing Director', 'York Moeller'],
-  ['Website', 'HarborNation'],
 ]
 
 function Contact() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Request an audit or discuss supplier qualification scope.">
+      <PageHero eyebrow="Contact" title="Discuss supplier qualification scope.">
         <p>
           Direct contact details for Y. Moeller Consulting GmbH & Co KG in Hamburg.
           Audit requests can be sent by e-mail or discussed by phone.

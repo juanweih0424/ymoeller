@@ -70,6 +70,33 @@ a {
   background: #4ab8d8;
 }
 
+.nav-contact-link {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4ab8d8;
+  border-radius: 6px;
+  background: #4ab8d8;
+  padding: 0.55rem 0.85rem;
+  color: #0d2240;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.nav-contact-link:hover,
+.nav-contact-link-active {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #0d2240;
+  transform: translateY(-1px);
+}
+
 .hamburger,
 .hamburger::before,
 .hamburger::after {
