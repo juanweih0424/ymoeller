@@ -10,18 +10,18 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0D2240]">
-      <nav className="site-shell flex h-[72px] items-center justify-between">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-section-bg)]/95 backdrop-blur">
+      <nav className="site-shell flex h-[76px] items-center justify-between">
         <a
           href="/"
-          className="leading-[0.95] text-white"
+          className="leading-tight text-[var(--color-text-primary)]"
           onClick={(event) => handleClick(event, '/')}
         >
-          <span className="block text-lg font-semibold tracking-wide">
-            Y. Moeller <span className="text-[#4AB8D8]">Consulting</span>
+          <span className="block text-base font-semibold tracking-wide sm:text-lg">
+            Y. Moeller Consulting GmbH & Co KG
           </span>
-          <span className="mt-0.5 block text-sm font-medium tracking-wide text-white/90">
-            GmbH & Co KG
+          <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-text-secondary)]">
+            Independent GMP Auditing & Consulting
           </span>
         </a>
 
@@ -46,7 +46,7 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
           </div>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[var(--color-border-strong)] text-[var(--color-text-primary)] lg:hidden"
             aria-label="Toggle navigation"
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
@@ -57,7 +57,7 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
       </nav>
 
       {open ? (
-        <div className="border-t border-white/10 bg-[#0D2240] px-5 py-3 lg:hidden">
+        <div className="border-t border-[var(--color-border)] bg-[var(--color-section-bg)] px-5 py-3 lg:hidden">
           <div className="site-shell grid gap-1">
             {navItems.map((item) => (
               <a
@@ -65,9 +65,9 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
                 href={item.href}
                 className={
                   item.key === '/contact'
-                    ? 'mt-2 rounded-md bg-[#4AB8D8] px-3 py-3 text-sm font-semibold text-[#0D2240]'
-                    : `rounded-md px-3 py-3 text-sm text-white/80 ${
-                        activeRoute === item.key ? 'bg-white/8 text-[#4AB8D8]' : ''
+                    ? 'mt-2 rounded-md bg-[var(--color-accent)] px-3 py-3 text-sm font-semibold text-[var(--color-accent-ink)]'
+                    : `rounded-md px-3 py-3 text-sm text-[var(--color-text-secondary)] ${
+                        activeRoute === item.key ? 'bg-white/8 text-[var(--color-accent)]' : ''
                       }`
                 }
                 onClick={(event) => handleClick(event, item.href)}
