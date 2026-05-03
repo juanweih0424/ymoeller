@@ -11,16 +11,16 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-section-bg)]/95 backdrop-blur">
-      <nav className="site-shell flex h-[76px] items-center justify-between">
+      <nav className="site-shell flex h-[66px] items-center justify-between sm:h-[76px]">
         <a
           href="/"
           className="leading-tight text-[var(--color-text-primary)]"
           onClick={(event) => handleClick(event, '/')}
         >
-          <span className="block text-base font-semibold tracking-wide sm:text-lg">
+          <span className="block text-[14px] font-semibold tracking-wide sm:text-lg">
             Y. Moeller Consulting GmbH & Co KG
           </span>
-          <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--color-text-secondary)]">
+          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--color-text-secondary)] sm:text-[10px] sm:tracking-[0.14em]">
             Independent GMP Auditing & Consulting
           </span>
         </a>
@@ -57,7 +57,7 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
       </nav>
 
       {open ? (
-        <div className="border-t border-[var(--color-border)] bg-[var(--color-section-bg)] px-5 py-3 lg:hidden">
+        <div className="border-t border-[var(--color-border)] bg-[var(--color-section-bg)] px-0 py-2 lg:hidden">
           <div className="site-shell grid gap-1">
             {navItems.map((item) => (
               <a
@@ -65,8 +65,8 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
                 href={item.href}
                 className={
                   item.key === '/contact'
-                    ? 'mt-2 rounded-md bg-[var(--color-accent)] px-3 py-3 text-sm font-semibold text-[var(--color-accent-ink)]'
-                    : `rounded-md px-3 py-3 text-sm text-[var(--color-text-secondary)] ${
+                    ? 'mt-2 rounded-md bg-[var(--color-accent)] px-3 py-2.5 text-[13px] font-semibold text-[var(--color-accent-ink)]'
+                    : `rounded-md px-3 py-2.5 text-[13px] text-[var(--color-text-secondary)] ${
                         activeRoute === item.key ? 'bg-white/8 text-[var(--color-accent)]' : ''
                       }`
                 }

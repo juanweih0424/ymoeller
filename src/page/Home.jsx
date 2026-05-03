@@ -1,16 +1,23 @@
+import homeHeroBackground from '../assets/home-hero-background.png'
+
 function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[var(--color-section-bg)] pt-28 text-[var(--color-text-primary)]">
+      <section className="relative overflow-hidden bg-[var(--color-section-bg)] pt-24 text-[var(--color-text-primary)] sm:pt-28">
         <div className="molecule-field" aria-hidden="true" />
-        <div className="content-shell grid gap-12 pb-14 pt-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
+        <div
+          className="hero-molecule-backdrop"
+          style={{ backgroundImage: `url(${homeHeroBackground})` }}
+          aria-hidden="true"
+        />
+        <div className="content-shell grid gap-10 pb-12 pt-8 sm:gap-12 sm:pb-14 sm:pt-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
           <div className="relative z-10">
-            <h1 className="max-w-4xl text-[34px] font-medium leading-[1.12] sm:text-[40px] lg:text-[40px]">
+            <h1 className="max-w-4xl text-[27px] font-medium leading-[1.16] sm:text-[40px] lg:text-[40px]">
               Your Independent Partner for{' '}
               <span className="text-[var(--color-accent)]">Global EU GMP and US FDA</span> Consulting and
               Auditing
             </h1>
-            <div className="mt-7 max-w-[680px] space-y-5 text-[17px] leading-8 text-[var(--color-text-secondary)]">
+            <div className="mt-5 max-w-[680px] space-y-4 text-[14px] leading-6 text-[var(--color-text-secondary)] sm:mt-7 sm:space-y-5 sm:text-[17px] sm:leading-8">
               <p>
                 Y. Moeller Consulting supports pharmaceutical and biotech companies in achieving
                 and maintaining GMP compliance with EU GMP and US FDA standards. We cover the full
@@ -24,7 +31,7 @@ function Home() {
                 than 30 regulatory inspections - with a 100% pass rate.
               </p>
             </div>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
               <a href="/services" className="btn-primary">
                 Explore Services -&gt;
               </a>
@@ -33,35 +40,12 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className="relative z-10 flex items-center justify-center">
-            <div className="visual-glow" aria-hidden="true" />
-            <div className="scientific-visual" aria-hidden="true">
-              <div className="readiness-badge">EU/FDA readiness</div>
-              <div className="visual-grid" />
-              <div className="document-panel">
-                <p>GMP audit trail</p>
-                <span />
-                <span />
-                <span />
-                <div className="check-row">check CAPA verified</div>
-                <div className="check-row">check QP release ready</div>
-              </div>
-              <div className="audit-lines">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="orbital orbital-one" />
-              <div className="orbital orbital-two" />
-              <div className="orbital orbital-three" />
-              <div className="protein-chain" />
-            </div>
-          </div>
+          <div className="hidden min-h-[480px] lg:block" aria-hidden="true" />
         </div>
       </section>
 
       <section className="border-y border-[var(--color-border)] bg-[var(--color-section-bg-soft)]">
-        <div className="content-shell grid grid-cols-2 divide-x divide-[var(--color-border)] py-8 lg:grid-cols-4">
+        <div className="content-shell grid grid-cols-2 divide-x divide-[var(--color-border)] py-6 sm:py-8 lg:grid-cols-4">
           {[
             ['50+', 'Sites Audited in China & India'],
             ['40-50', 'Audits Per Year, Worldwide'],
@@ -69,8 +53,8 @@ function Home() {
             ['EU/FDA', 'GMP Readiness Support'],
           ].map(([value, label]) => (
             <div key={label} className="px-4 py-3 text-center">
-              <p className="text-[28px] font-semibold leading-none text-[var(--color-accent)]">{value}</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.04em] text-[var(--color-text-muted)]">
+              <p className="text-[22px] font-semibold leading-none text-[var(--color-accent)] sm:text-[28px]">{value}</p>
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.03em] text-[var(--color-text-muted)] sm:text-xs sm:tracking-[0.04em]">
                 {label}
               </p>
             </div>

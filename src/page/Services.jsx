@@ -1,5 +1,6 @@
 import Card from '../component/Card.jsx'
 import Section from '../component/Section.jsx'
+import servicesAuditScene from '../assets/services-gmp-audit-scene.png'
 
 const services = [
   [
@@ -37,6 +38,13 @@ function Services() {
     <Section className="bg-[#F6F9FC] pb-16 pt-32">
       <p className="eyebrow text-[#185FA5]">Our Services</p>
       <h1 className="section-title mt-3">Our Services</h1>
+      <div className="mt-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_18px_48px_rgb(13_34_64_/_10%)]">
+        <img
+          src={servicesAuditScene}
+          alt="GMP auditors reviewing quality documentation in a pharmaceutical manufacturing facility"
+          className="h-[260px] w-full object-cover sm:h-[340px] lg:h-[390px]"
+        />
+      </div>
       <div className="mt-9 grid gap-4 md:grid-cols-2">
         {services.map(([title, text], index) => (
           <Card key={title}>
