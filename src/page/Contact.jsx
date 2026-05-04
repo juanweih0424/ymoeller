@@ -1,6 +1,6 @@
 import Card from '../component/Card.jsx'
-import PageHero from '../component/PageHero.jsx'
 import Section from '../component/Section.jsx'
+import contactHamburgOffice from '../assets/contact-hamburg-office.png'
 
 const contactDetails = [
   { label: 'Telephone', value: '+49 40 8227 81 83', href: 'tel:+494082278183' },
@@ -18,15 +18,17 @@ const legalDetails = [
 
 function Contact() {
   return (
-    <>
-      <PageHero eyebrow="Contact" title="Discuss supplier qualification scope.">
-        <p>
-          Direct contact details for Y. Moeller Consulting GmbH & Co KG in Hamburg.
-          Audit requests can be sent by e-mail or discussed by phone.
-        </p>
-      </PageHero>
-
-      <Section className="py-16">
+    <Section className="bg-[#F6F9FC] pb-16 pt-24 sm:pt-32">
+      <p className="eyebrow text-[#185FA5]">Contact & Imprint</p>
+      <h1 className="section-title mt-3">Contact & Imprint</h1>
+      <div className="mt-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_18px_48px_rgb(13_34_64_/_10%)]">
+        <img
+          src={contactHamburgOffice}
+          alt="Elbphilharmonie Hamburg near the Y. Moeller Consulting office"
+          className="h-[260px] w-full object-cover sm:h-[340px] lg:h-[390px]"
+        />
+      </div>
+      <div className="mt-10">
         <div className="grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
           <Card className="bg-[#F5F6F8]">
             <p className="eyebrow text-[#185FA5]">Office</p>
@@ -94,8 +96,8 @@ function Contact() {
             </Card>
           </div>
         </div>
-      </Section>
-    </>
+      </div>
+    </Section>
   )
 }
 
