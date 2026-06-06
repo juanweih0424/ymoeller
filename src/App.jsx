@@ -3,71 +3,48 @@ import Footer from './component/Footer.jsx'
 import Navbar from './component/Navbar.jsx'
 import Contact from './page/Contact.jsx'
 import Home from './page/Home.jsx'
-import Privacy from './page/Privacy.jsx'
 import Qualifications from './page/Qualifications.jsx'
 import Services from './page/Services.jsx'
 
 const routes = {
-  '/': {
+  '/home': {
     label: 'Home',
-    title: 'Y. Moeller Consulting | GMP Auditing in China & India',
+    title: 'Y.Moeller | Home',
     description:
       'Independent GMP auditing and consulting for pharmaceutical and biotech companies working across China, India, Europe, and the United States.',
     component: Home,
   },
-  '/services': {
+  '/service': {
     label: 'Services',
-    title: 'GMP Audit Services | Y. Moeller Consulting',
+    title: 'Y.Moeller | Services',
     description:
       'Worldwide GMP audits, CAPA follow-up, authority inspection support, training, and pharmaceutical quality consulting.',
     component: Services,
   },
   '/qualifications': {
     label: 'Qualifications',
-    title: 'Qualifications | Y. Moeller Consulting',
+    title: 'Y.Moeller | Qualifications',
     description:
       'Certifications, regulatory experience, conference activity, and authority inspection support credentials.',
     component: Qualifications,
   },
   '/contact': {
     label: 'Contact & Imprint',
-    title: 'Contact | Y. Moeller Consulting',
+    title: 'Y.Moeller | Contact',
     description:
       'Contact Y. Moeller Consulting in Hamburg for GMP audit requests and pharmaceutical compliance consulting.',
     component: Contact,
   },
-  '/privacy': {
-    label: 'Privacy Policy',
-    title: 'Privacy Policy | Y. Moeller Consulting',
-    description:
-      'Privacy policy information for visitors to the Y. Moeller Consulting website.',
-    component: Privacy,
-  },
-}
-
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
-
-const stripBasePath = (pathname) => {
-  if (basePath && pathname === basePath) {
-    return '/'
-  }
-
-  if (basePath && pathname.startsWith(`${basePath}/`)) {
-    return pathname.slice(basePath.length) || '/'
-  }
-
-  return pathname
 }
 
 const normalizeRoute = () => {
-  const path = stripBasePath(window.location.pathname).replace(/\/+$/, '') || '/'
-  return routes[path] ? path : '/'
+  const path = window.location.pathname.replace(/\/+$/, '') || '/home'
+  return routes[path] ? path : '/home'
 }
 
 const navigateTo = (href) => {
-  const path = href.replace(/\/+$/, '') || '/'
-  const browserPath = `${basePath}${path === '/' ? '/' : path}`
-  window.history.pushState({}, '', browserPath)
+  const path = href.replace(/\/+$/, '') || '/home'
+  window.history.pushState({}, '', path)
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
@@ -92,7 +69,7 @@ function App() {
 
       const url = new URL(link.href)
       const sameOrigin = url.origin === window.location.origin
-      const routePath = stripBasePath(url.pathname).replace(/\/+$/, '') || '/'
+      const routePath = url.pathname.replace(/\/+$/, '') || '/home'
       const knownRoute = routes[routePath]
 
       if (sameOrigin && knownRoute) {
@@ -116,8 +93,8 @@ function App() {
   const navItems = useMemo(
     () =>
       [
-        '/',
-        '/services',
+        '/home',
+        '/service',
         '/qualifications',
         '/contact',
       ].map((key) => ({ key, label: routes[key].label, href: key })),
@@ -125,9 +102,9 @@ function App() {
   )
 
   return (
-    <div className="min-h-screen bg-white text-slate-800">
+    <div className="flex min-h-screen flex-col bg-[var(--color-content-bg)] text-slate-800">
       <Navbar activeRoute={activeRoute} navItems={navItems} onNavigate={navigateTo} />
-      <main>
+      <main className="app-main flex flex-1 flex-col">
         <Page />
       </main>
       <Footer />

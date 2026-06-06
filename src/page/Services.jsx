@@ -5,27 +5,15 @@ import servicesAuditScene from '../assets/services-gmp-audit-scene.png'
 const services = [
   [
     'GMP Audits & Supplier Qualification',
-    'Worldwide audits per EU GMP, ICH Q7, 21 CFR 210/211, GDP, and GLP - covering API, FDF, biologics, peptide API, sterile manufacturing, excipients, and packaging sites. Routine, for-cause, remote, follow-up, and mock authority inspections.',
+    'Worldwide audits per EU GMP, 21 CFR 210/211, GDP, and GLP - covering DS, DP, biologics, sterile manufacturing, excipients, and packaging material. Routine, for-cause,  follow-up, and mock authority inspections.',
   ],
   [
     'Inspection Preparation & Authority Support',
-    'Site preparation and accompaniment for EDQM and EU national authority inspections. CAPA evaluation, follow-up audits, and response strategy support following inspection observations.',
-  ],
-  [
-    'Regulatory Gap Analysis',
-    'Chapter-by-chapter compliance gap analysis against FDA 21 CFR 210/211, EU GMP, ICH Q7, Q10, and Q11 - with each gap classified by severity, recommended corrective action, and estimated remediation effort. Dual EU + FDA analysis available.',
-  ],
-  [
-    'Advanced Therapeutics',
-    'Specialized auditing and compliance consulting for monoclonal antibodies, ADCs, bispecific antibodies, GLP-1 peptide APIs, and other innovative drug modalities at China-based CDMO and CMO sites.',
-  ],
-  [
-    'US Investor Services - China Platform Assessment',
-    'Independent, investor-aligned due diligence for life sciences funds and biopharma partnerships, including pre-investment GMP assessment, gap analysis, periodic platform audits, ongoing compliance monitoring, and pipeline asset GMP readiness reviews.',
+    'Site preparation and accompaniment for EU national authority inspections. Translations, CAPA evaluation, follow-up audits, and response strategy support following inspection observations.',
   ],
   [
     'Training & Consulting',
-    'In-house GMP training in German, English, or Chinese. Risk assessments, DMF preparation, analytical method transfer, quality issue resolution, and regulatory strategy consulting for manufacturers targeting EU or US markets.',
+    'In-house GMP training in German, English, or Chinese. including Risk assessments, Contamination Control Strategies (CCS), DMF preparation, analytical method transfer, quality issue resolution, supplier qualification etc.',
   ],
   [
     'Translation Services',
@@ -35,10 +23,9 @@ const services = [
 
 function Services() {
   return (
-    <Section className="bg-[#F6F9FC] pb-16 pt-32">
-      <p className="eyebrow text-[#185FA5]">Our Services</p>
-      <h1 className="section-title mt-3">Our Services</h1>
-      <div className="mt-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_18px_48px_rgb(13_34_64_/_10%)]">
+    <Section className="bg-[var(--color-content-bg)] pb-16 pt-32">
+      <h1 className="section-title uppercase">OUR SERVICES</h1>
+      <div className="mt-8 overflow-hidden rounded-lg border border-[#D5E0EA] bg-[var(--color-content-surface)] shadow-[0_18px_48px_rgb(13_34_64_/_12%)]">
         <img
           src={servicesAuditScene}
           alt="GMP auditors reviewing quality documentation in a pharmaceutical manufacturing facility"

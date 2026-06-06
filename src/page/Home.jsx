@@ -19,46 +19,16 @@ function Home() {
             </h1>
             <div className="mt-5 max-w-[680px] space-y-4 text-[14px] leading-6 text-[var(--color-text-secondary)] sm:mt-7 sm:space-y-5 sm:text-[17px] sm:leading-8">
               <p>
-                Y. Moeller Consulting supports pharmaceutical and biotech companies in achieving
-                and maintaining GMP compliance with EU GMP and US FDA standards. We cover the full
-                development and manufacturing spectrum - from starting materials and Drug Substance
-                through to finished Drug Product and Investigational Medicinal Products.
+                Y. Moeller Consulting supports pharmaceutical and biotech companies in achieving and maintaining GMP compliance with EU GMP and US FDA standards. 
+                We cover all quality aspects of the the development and manufacturing spectrum - from starting materials and Drug Substance to Drug Product, inlcuding Investigational New Drug (IND). 
               </p>
               <p>
-                Our services range from quality audits enabling Qualified Persons to release
-                clinical trial batches, to routine GMP audits and comprehensive preparation for EU
-                GMP and FDA regulatory inspections. Over the past 15 years, we have supported more
-                than 30 regulatory inspections - with a 100% pass rate.
+                Our services range from quality audits enabling Qualified Persons to release clinical trial batches, to routine GMP audits and comprehensive preparation for EU GMP and FDA regulatory inspections. 
+                Over the past 15 years, we have supported more than 35 regulatory inspections. 
               </p>
-            </div>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <a href="/services" className="btn-primary">
-                Explore Services -&gt;
-              </a>
-              <a href="/contact" className="btn-secondary">
-                Contact Us
-              </a>
             </div>
           </div>
           <div className="hidden min-h-[480px] lg:block" aria-hidden="true" />
-        </div>
-      </section>
-
-      <section className="border-y border-[var(--color-border)] bg-[var(--color-section-bg-soft)]">
-        <div className="content-shell grid grid-cols-2 divide-x divide-[var(--color-border)] py-6 sm:py-8 lg:grid-cols-4">
-          {[
-            ['50+', 'Sites Audited in China & India'],
-            ['40-50', 'Audits Per Year, Worldwide'],
-            ['30+', 'Successful Inspections'],
-            ['EU/FDA', 'GMP Readiness Support'],
-          ].map(([value, label]) => (
-            <div key={label} className="px-4 py-3 text-center">
-              <p className="text-[22px] font-semibold leading-none text-[var(--color-accent)] sm:text-[28px]">{value}</p>
-              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.03em] text-[var(--color-text-muted)] sm:text-xs sm:tracking-[0.04em]">
-                {label}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
     </>

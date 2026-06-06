@@ -13,14 +13,14 @@ function Navbar({ activeRoute, navItems, onNavigate }) {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-section-bg)]/95 backdrop-blur">
       <nav className="site-shell flex h-[66px] items-center justify-between sm:h-[76px]">
         <a
-          href="/"
+          href="/home"
           className="leading-tight text-[var(--color-text-primary)]"
-          onClick={(event) => handleClick(event, '/')}
+          onClick={(event) => handleClick(event, '/home')}
         >
           <span className="block text-[14px] font-semibold tracking-wide sm:text-lg">
             Y. Moeller Consulting GmbH & Co KG
           </span>
-          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--color-text-secondary)] sm:text-[10px] sm:tracking-[0.14em]">
+          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--color-accent-soft)] sm:text-[10px] sm:tracking-[0.14em]">
             Independent GMP Auditing & Consulting
           </span>
         </a>
