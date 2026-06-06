@@ -37,14 +37,28 @@ const routes = {
   },
 }
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+const stripBasePath = (pathname) => {
+  if (basePath && pathname === basePath) {
+    return '/home'
+  }
+
+  if (basePath && pathname.startsWith(`${basePath}/`)) {
+    return pathname.slice(basePath.length) || '/home'
+  }
+
+  return pathname
+}
+
 const normalizeRoute = () => {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/home'
+  const path = stripBasePath(window.location.pathname).replace(/\/+$/, '') || '/home'
   return routes[path] ? path : '/home'
 }
 
 const navigateTo = (href) => {
   const path = href.replace(/\/+$/, '') || '/home'
-  window.history.pushState({}, '', path)
+  window.history.pushState({}, '', `${basePath}${path}`)
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
@@ -69,7 +83,7 @@ function App() {
 
       const url = new URL(link.href)
       const sameOrigin = url.origin === window.location.origin
-      const routePath = url.pathname.replace(/\/+$/, '') || '/home'
+      const routePath = stripBasePath(url.pathname).replace(/\/+$/, '') || '/home'
       const knownRoute = routes[routePath]
 
       if (sameOrigin && knownRoute) {
