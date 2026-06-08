@@ -1,4 +1,3 @@
-import Card from '../component/Card.jsx'
 import Section from '../component/Section.jsx'
 import qualificationsGmpAudit from '../assets/qualifications-gmp-audit.png'
 

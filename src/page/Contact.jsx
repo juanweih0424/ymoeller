@@ -37,18 +37,6 @@ function Contact() {
               <br />
               20457 Hamburg
             </address>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Include site location, product type, target market and preferred audit window when
-              requesting scope clarification.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="mailto:info@ymoeller.com" className="btn-primary">
-                E-mail now
-              </a>
-              <a href="tel:+494082278183" className="btn-outline-light">
-                Call office
-              </a>
-            </div>
           </Card>
           <div className="grid gap-6">
             <Card>

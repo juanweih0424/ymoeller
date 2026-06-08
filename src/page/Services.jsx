@@ -13,7 +13,7 @@ const services = [
   ],
   [
     'Training & Consulting',
-    'In-house GMP training in German, English, or Chinese. including Risk assessments, Contamination Control Strategies (CCS), DMF preparation, analytical method transfer, quality issue resolution, supplier qualification etc.',
+    'In-house GMP training in German, English, or Chinese. including risk assessments, Contamination Control Strategies (CCS), DMF preparation, analytical method transfer, quality issue resolution, supplier qualification etc.',
   ],
   [
     'Translation Services',

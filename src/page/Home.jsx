@@ -20,7 +20,7 @@ function Home() {
             <div className="mt-5 max-w-[680px] space-y-4 text-[14px] leading-6 text-[var(--color-text-secondary)] sm:mt-7 sm:space-y-5 sm:text-[17px] sm:leading-8">
               <p>
                 Y. Moeller Consulting supports pharmaceutical and biotech companies in achieving and maintaining GMP compliance with EU GMP and US FDA standards. 
-                We cover all quality aspects of the the development and manufacturing spectrum - from starting materials and Drug Substance to Drug Product, inlcuding Investigational New Drug (IND). 
+                We cover all quality aspects of the the development and manufacturing spectrum - from starting material and Drug Substance to Drug Product, inlcuding Investigational New Drug (IND). 
               </p>
               <p>
                 Our services range from quality audits enabling Qualified Persons to release clinical trial batches, to routine GMP audits and comprehensive preparation for EU GMP and FDA regulatory inspections. 
